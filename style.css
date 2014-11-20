@@ -1,12 +1,14 @@
 p {
   font-family: Tahoma, sans-serif;
   font-weight: bold;
-  font-size: 2em;
+  text-align: center;
+  font-size: 3em;
 }
 
-@media all and (max-width: 320px) {
+@media all and (min-width: 480px) {
  p {
-        font-size: 100%;
-        text-align: center;
+        font-size: 1em;
+        color: red;
+        text-align: right;
     }  
  }    

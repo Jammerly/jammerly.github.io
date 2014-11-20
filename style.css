@@ -3,3 +3,9 @@ p {
   font-weight: bold;
   font-size: 2em;
 }
+
+media all and (max-width: 500px) {
+ p {
+        font-size: 1em;
+    }  
+ }    

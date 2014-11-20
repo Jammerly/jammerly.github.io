@@ -1,3 +1,7 @@
+* {
+  transition: all .3 ease;
+}
+
 p {
   font-family: Tahoma, sans-serif;
   font-weight: bold;
@@ -8,7 +12,6 @@ p {
 @media all and (min-width: 480px) {
  p {
         font-size: 1em;
-        color: red;
         text-align: left;
     }  
  }    

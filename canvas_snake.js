@@ -1,3 +1,5 @@
+//(c) http://thecodeplayer.com/
+
 $(document).ready(function(){
 	//Canvas stuff
 	var canvas = $("#canvas")[0];
@@ -78,7 +80,7 @@ $(document).ready(function(){
 		//This will restart the game if the snake hits the wall
 		//Lets add the code for body collision
 		//Now if the head of the snake bumps into its body, the game will restart
-		if(nx == -1 || nx == w/cw || ny == -1 || ny == h/cw || check_collision(nx, ny, snake_array))
+		if(check_collision(nx, ny, snake_array))
 		{
 			//restart game
 			init();
@@ -100,7 +102,11 @@ $(document).ready(function(){
 		else
 		{
 			var tail = snake_array.pop(); //pops out the last cell
-			tail.x = nx; tail.y = ny;
+			if(nx == w/cw) tail.x = 0;
+			else if (nx == -1) tail.x = w/cw;
+			else if (ny == -1) tail.y = h/cw;
+			else if (ny == h/cw) tail.y = 0;
+			else { tail.x = nx; tail.y = ny; }
 		}
 		//The snake can now eat the food.
 		
